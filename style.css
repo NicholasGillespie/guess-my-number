@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+/* RESET **************************************** */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: 0 solid;
+  word-break: break-word;
+}
+
+/* ROOT **************************************** */
+:root {
+  /* Font-family */
+  --font-sans-serif: -apple-system, BlinkMacSystemFont, avenir next, avenir,
+    segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+
+  /* Modular scale */
+  /* 1em | 0.75em  | 0.563em | 0.422em | 0.317em | 0.238em */
+  /* 1em | 1.333em | 1.777em | 2.369em | 3.157em | 4.209em */
+  --ratio: 1.333;
+  --s-5: calc(var(--s-4) / var(--ratio));
+  --s-4: calc(var(--s-3) / var(--ratio));
+  --s-3: calc(var(--s-2) / var(--ratio));
+  --s-2: calc(var(--s-1) / var(--ratio));
+  --s-1: calc(var(--s0) / var(--ratio));
+  --s0: 1rem;
+  --s1: calc(var(--s0) * var(--ratio));
+  --s2: calc(var(--s1) * var(--ratio));
+  --s3: calc(var(--s2) * var(--ratio));
+  --s4: calc(var(--s3) * var(--ratio));
+  --s5: calc(var(--s4) * var(--ratio));
+
+  /* Sizes */
+  --max-inline-size: 1080px;
+  --min-inline-size: 320px;
+  --line-height: 1.5;
+
+  /* Paddings */
+  --padding-composition: var(--s2);
+  --padding-box: var(--s1);
+  --padding-element: var(--s0);
+
+  /* Colors */
+  --clr-light: white;
+  --clr-mid: lightgrey;
+  --clr-dark: black;
+  --clr-accent: lightgreen;
+
+  /* border */
+  --border-clr: var(--clr-light);
+  --border-style: solid;
+  --border-width: 7px;
+  --border: var(--border-clr) var(--border-style) var(--border-width);
+}
+/* GLOBAL **************************************** */
+body {
+  font-family: 'Press Start 2P', var(--font-sans-serif);
+  color: var(--clr-light);
+  background-color: var(--clr-dark);
+  word-break: break-word;
+  min-inline-size: var(--min-inline-size);
+  overflow-x: hidden;
+}
+
+/* header */
+header {
+  border-block-end: var(--border);
+  position: relative;
+}
+
+h1 {
+font-size: var(--s3);
+margin-block-start: var(--s5);
+margin-block-end: calc(var(--s5) + var(--s2));
+text-align: center;
+}
+
+button {
+  font-size: var(--s1);
+  white-space: nowrap;
+  padding: var(--s1) var(--s2);
+  font-family: inherit;
+  background-color: var(--clr-light);
+}
+
+button:hover{
+  background-color: var(--clr-mid);
+}
+
+#number {
+  font-size: var(--s3);
+  color: var(--clr-dark);
+  background-color: var(--clr-light);
+  padding: var(--s3) var(--s4);
+  position: absolute;
+  inset-block-end: -50px;
+  inset-inline-start: 50%;
+  transform: translate(-50%);
+}
+
+/* main */
+main{
+  margin-block-start: var(--s3);
+}
+
+input {
+  display: block;
+  max-inline-size: 15rem;
+  border: var(--border);
+  background: none;
+  color: var(--clr-light);
+  text-align: center;
+  font-size: var(--s3);
+  font-family: inherit;
+  margin-block-end: var(--s1);
+  padding: var(--s3);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+main button {
+  display: block;
+  margin-block-end: var(--s2);
+}
+
+/* COMPOSITION **************************************** */
+.container {
+  padding-inline: max(
+    var(--padding-composition),
+    50vw - var(--max-inline-size) / 2
+  );
+  padding-block: var(--padding-composition);
+}
+
+.switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2);
+  margin-block-start: var(--s3);
+}
+
+.switcher > * {
+  flex-grow: 1;
+  flex-basis: calc((30rem - 100%) * 999);
+}
+
+/* UTILITIES **************************************** */
+.flex\:space-between {
+  display: flex;
+  align-items: center;
+  gap: var(--s1);
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.flow > :where(:not(:first-child)) {
+  margin-block-start: var(--space-flow, 1em);
+}
+
+/* BLOCK **************************************** */
+.ctn-left * {
+margin-inline: auto;
+margin-block-end: var(--s2);
+}
+
+.ctn-right {
+display: flex;
+flex-direction: column;
+font-size: var(--s1);
+margin-block-end: var(--s2);
+}
+
+.ctn-right > :first-child {
+  margin-block-end: var(--s1);
+}
+
+.ctn-right :nth-child(2){
+  margin-block-start: auto;
+}
