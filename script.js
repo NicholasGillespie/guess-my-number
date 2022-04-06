@@ -42,6 +42,8 @@ let number = Math.trunc(Math.random() * 20 + 1);
 // declaring score
 let score = 20;
 document.querySelector('#score').value = score;
+// declaring highScore
+let highScore = 0;
 
 // document.querySelector('#number').textContent = number;
 
@@ -56,6 +58,10 @@ document.querySelector('#check').addEventListener('click', function () {
     document.querySelector('body').style.backgroundColor = 'var(--clr-win)';
     document.querySelector('#number').style.minInlineSize = '23rem';
     document.querySelector('#number').textContent = number;
+    if (score > highScore) {
+      highScore = score;
+      document.querySelector('#highScore').textContent = highScore;
+    }
     // RESULT TOO HIGH
   } else if (input > number) {
     if (score > 1) {
