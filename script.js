@@ -43,7 +43,7 @@ let number = Math.trunc(Math.random() * 20 + 1);
 let score = 20;
 document.querySelector('#score').value = score;
 
-document.querySelector('#number').textContent = number;
+// document.querySelector('#number').textContent = number;
 
 document.querySelector('#check').addEventListener('click', function () {
   const input = Number(document.querySelector('#input').value);
@@ -85,7 +85,7 @@ document.querySelector('#again').addEventListener('click', function () {
 
   document.querySelector('#msg').textContent = 'Start guessing...';
   document.querySelector('#score').textContent = score;
-  document.querySelector('#number').textContent = number;
+  document.querySelector('#number').textContent = '?';
   document.querySelector('body').style.backgroundColor = 'var(--clr-dark)';
   document.querySelector('#number').style.minInlineSize = '11.5rem';
   document.querySelector('#input').textContent = '';
