@@ -13,7 +13,7 @@
 
   <header class="container">
     <div class="flex:space-between">
-      <button>Again!</button>
+      <button id="again">Again!</button>
       <p>(Between 1 and 20)</p>
     </div>
     <h1>Guess My Number!</h1>
@@ -22,16 +22,18 @@
   <main class="container">
     <div class="switcher">
       <div class="ctn-left">
-        <input class="frame" type="number">
-        <button>Check!</button>
+        <input id="input" type="number">
+        <button id="check">Check!</button>
       </div>
       <div class="[ flow ][ ctn-right ]">
-        <p class="">Start guessing...</p>
-        <p>Score: <span>20</span></p>
-        <p>Highscore: <span>0</span></p>
+        <p id="msg">Start guessing...</p>
+        <p>Score: <span id="score">20</span></p>
+        <p>Highscore: <span id="highScore">0</span></p>
       </div>
     </div>
   </main>
+
+  <script src="script.js"></script>
 
 </body>
 
