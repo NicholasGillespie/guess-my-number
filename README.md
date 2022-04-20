@@ -8,7 +8,7 @@ Un jeu visant à permettre à son utilisateur de deviner un "nombre secret", –
 
 ## Mise en page
 
-L'interface est algorithmiquement adaptable avec "feel" retro de jeux vidéos des années 1980.
+Interface algorithmiquement adaptable avec "feel" retro de jeux vidéos des années 1980.
 
 ![Webpage screenshot](/images/screenshot.jpg)
 
